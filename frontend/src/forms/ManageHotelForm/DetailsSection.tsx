@@ -27,7 +27,7 @@ const DetailsSection = () => {
             <label className="flex-1 text-sm font-bold text-gray-700">
                 Country
                 <input type="text" className="w-full px-2 py-1 font-normal border rounded" 
-                {...register("city",{required:"This field is required!"})}></input>
+                {...register("country",{required:"This field is required!"})}></input>
                 {errors.country && (
                     <span className="text-red-500">{errors.country.message}</span>
                 )}
@@ -36,7 +36,7 @@ const DetailsSection = () => {
             <label className="flex-1 text-sm font-bold text-gray-700">
                 Description
                 <textarea rows={10} className="w-full px-2 py-1 font-normal border rounded" 
-                {...register("city",{required:"This field is required!"})}></textarea>
+                {...register("description",{required:"This field is required!"})}></textarea>
                 {errors.description && (
                     <span className="text-red-500">{errors.description.message}</span>
                 )}
