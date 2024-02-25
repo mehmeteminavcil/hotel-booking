@@ -8,9 +8,13 @@ import {
 import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
+import AddHotel from "./pages/AddHotel";
+import { useAppContext } from "./contexts/AppContext";
 
 
 function App() {
+
+  const {isLoggedIn} = useAppContext()
 
 
   return (
@@ -36,6 +40,15 @@ function App() {
           <SignIn/>
         </Layout>} 
       />
+      {
+        isLoggedIn && <>
+        <Route path="/add-hotel" element={
+          <Layout>
+            <AddHotel/>
+          </Layout>
+        }/>
+        </>
+      }
 
       <Route path="*" element={<Navigate to="/"/>}/>
     </Routes>
@@ -43,4 +56,4 @@ function App() {
   )
 }
 
-export default App
+export default App 
