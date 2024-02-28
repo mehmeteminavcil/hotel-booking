@@ -55,3 +55,23 @@ test("should allow user to add a hotel", async({page})=>{
     await expect(page.getByText("Hotel Saved!")).toBeVisible()
 
 })
+
+
+test("should display hotels" ,async ({page})=>{
+  await page.goto(`${UI_URL}my-hotels`)
+
+  await expect(page.getByRole("link",{name:"Add Hotel"})).toBeVisible()
+
+  await expect (page.getByText("Testing Hotel")).toBeVisible()
+  await expect (page.getByText("For Testing description")).toBeVisible()
+  await expect (page.getByText("For Testing City,For Testing country")).toBeVisible()
+  await expect (page.getByText("Cabin")).toBeVisible()
+  await expect (page.getByText("$ 199 per night")).toBeVisible()
+  await expect (page.getByText("3 adults,3 children")).toBeVisible()
+  await expect (page.getByText("1 Star Rating")).toBeVisible()
+
+  const viewDetailsButton = page.locator('text="View Details"').nth(0) // Change the index to 0, 1, or 2 depending on which button you want to check
+  await expect(viewDetailsButton).toBeVisible()
+  
+
+})
