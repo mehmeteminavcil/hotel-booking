@@ -75,3 +75,25 @@ test("should display hotels" ,async ({page})=>{
   
 
 })
+
+test("should edit hotel ",async ({page})=>{
+  
+  await page.goto(`${UI_URL}my-hotels`)
+
+  page.locator('text="View Details"').nth(0).click()
+
+  await page.waitForSelector('[name="name"]',{state:"attached"})
+  await expect(page.locator('[name="name"]')).toHaveValue("For Testing Hotel")
+  await page.locator( '[name="name"]').fill("For Testing Hotel UPDATED")
+  await page.getByRole("button",{name:"Save"}).click()
+
+  await expect(page.getByText("Hotel Saved")).toBeVisible()
+
+  
+  await page.reload()
+  // reset to test Data 
+  await expect(page.locator('[name="name"]')).toHaveValue("For Testing Hotel UPDATED")
+  await page.locator( '[name="name"]').fill("For Testing Hotel")
+  await page.getByRole("button",{name:"Save"}).click()
+  await expect(page.getByText("Hotel Saved")).toBeVisible()
+})
