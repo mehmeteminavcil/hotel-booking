@@ -94,7 +94,7 @@ export const fetchMyHotels = async ():Promise<HotelType[]> =>{
     })
 
     if(!response.ok){
-        throw new Error ("Error fetching hotelss")
+        throw new Error ("Error fetching hotels")
     }
     return response.json()
 }
