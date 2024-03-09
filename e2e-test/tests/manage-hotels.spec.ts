@@ -10,6 +10,7 @@ test.beforeEach(async ({page})=>{
 
   // get the sing in button
   await page.getByRole("link",{name:"Sign in"}).click()
+  await page.getByRole("link",{name:"Sign in"}).click()
 
   await expect(page.getByRole('heading',{name:"Sign in"})).toBeVisible()
 

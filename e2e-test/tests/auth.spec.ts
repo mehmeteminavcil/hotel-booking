@@ -5,7 +5,9 @@ const UI_URL = "http://localhost:5173/"
 test('should allow the user the sign in', async ({ page }) => {
   
   await page.goto(UI_URL);
+  
   // get the sing in button
+  await page.getByRole("link",{name:"Sign in"}).click()
   await page.getByRole("link",{name:"Sign in"}).click()
 
   await expect(page.getByRole('heading',{name:"Sign in"})).toBeVisible()
@@ -29,6 +31,7 @@ test("should allow user to register",async({page})=>{
   const testEmail = `test_register_${Math.floor(Math.random()*9000) + 1000}@test.com`
   await page.goto(UI_URL)
   
+  await page.getByRole("link",{name:"Sign in"}).click()
   await page.getByRole("link",{name:"Sign in"}).click()
   await page.getByRole("link",{name:"Create account here"}).click()
   await expect(page.getByRole('heading',{name:"Create an account"})).toBeVisible()
