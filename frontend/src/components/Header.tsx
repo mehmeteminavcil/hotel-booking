@@ -10,7 +10,7 @@ const Header = () => {
     <div className='py-6 bg-blue-800'>
         <div className="container flex justify-between mx-auto">
             <span className="text-3xl font-bold tracking-tight text-white">
-                <Link to="/">MemoHolidays</Link>
+                <Link to="/">Booking</Link>
             </span>
             <span className="flex space-x-2">
               { isLoggedIn ? <> 

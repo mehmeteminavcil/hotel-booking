@@ -88,12 +88,12 @@ export const SearchBar = () => {
                 />
             </div>
             <div className="flex gap-1">
-                <button className="w-2/3 h-full p-2 text-xl font-bold text-white bg-blue-600 hover:bg-blue-500">
+                <button className="w-full h-full p-2 text-xl font-bold text-white bg-blue-600 hover:bg-blue-500">
                     Search
                 </button>
-                <button className="w-1/3 h-full p-2 text-xl font-bold text-white bg-red-600 hover:bg-reds-500">
+                {/* <button className="w-1/3 h-full p-2 text-xl font-bold text-white bg-red-600 hover:bg-reds-500">
                     Clear
-                </button>
+                </button> */}
 
             </div>
         </form>
