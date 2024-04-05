@@ -4,7 +4,7 @@
 
 - You'll need to wait for the server to start on render.com, which typically takes a maximum of 50 seconds due to the limitations of the free plan.
 
-![Hotel Booking](https://github.com/mehmeteminavcil/hotel-booking/tree/main/frontend/public/Booking.png?raw=true)
+![Hotel Booking](https://github.com/mehmeteminavcil/hotel-booking/blob/main/frontend/public/Booking.png?raw=true)
 
 ## Hotel Booking MERN App
 
